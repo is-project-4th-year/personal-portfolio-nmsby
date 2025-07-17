@@ -1,102 +1,72 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/nf_lrVjW)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19849657&assignment_repo_type=AssignmentRepo)
-# 🌐 Personal Portfolio Project Assignment
+# 🌟 Personal Portfolio - Nelson Masbayi Muyodi
 
-Welcome to your **Personal Portfolio Project**! This assignment is designed to help you practice core GitHub and project management skills, including milestones, issues, project boards, branching, commit conventions, pull requests, and resolving merge conflicts.
+Welcome to my personal portfolio website! This project showcases my skills, projects, and achievements as an Informatics Computer Science student at Strathmore University.
 
----
+## 🎯 About This Project
 
-## 📌 Project Management Guidelines
+This portfolio is built as part of the Informatics and Computer Science Project 2 class, demonstrating proficiency in:
+- Modern web development technologies
+- GitHub workflow best practices
+- Responsive design principles
+- Version control and project management
 
-### ✅ Milestones
-Define major phases or deliverables of your portfolio (e.g., Landing Page, Team Profiles, Admin Panel).
+## 🛠️ Tech Stack
 
-### ✅ Issues
-Break each milestone into manageable tasks. Link these issues to their related milestone for better tracking.
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Styling**: Custom CSS with Flexbox and Grid
+- **Icons**: Font Awesome
+- **Fonts**: Google Fonts
+- **Deployment**: GitHub Pages
 
-### ✅ Project Board
-Create a GitHub project board with columns like:
-- `To Do`
-- `In Progress`
-- `Done`
+## 🚀 Features
 
-Assign tasks and pull requests to the appropriate columns.
+- Responsive design for all devices
+- Interactive navigation
+- Skills showcase with animations
+- Project gallery with filtering
+- Contact form with validation
+- Smooth scrolling and animations
 
----
-
-## 🔧 Git Workflow
-
-### 🔀 Branching
-Use feature branches for each issue. Adopt a consistent naming format such as:
-
-```
-feature/<issue-number>-short-description
-```
-
-### 💬 Commits
-Use structured, meaningful commit messages:
+## 📁 Project Structure
 
 ```
-<type>(<optional scope>): <short description>
-
-<body>
-
-<footer>
+personal-portfolio-nmsby/
+├── index.html
+├── css/
+│   ├── style.css
+│   ├── responsive.css
+│   └── components/
+├── js/
+│   ├── main.js
+│   └── components/
+├── assets/
+│   ├── images/
+│   └── icons/
+└── docs/
+    └── Assignment.md
 ```
 
-**Commit Types: `(use at least 6 of these)`**
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Formatting, white space, etc.
-- `refactor`: Code restructure (no feature or bug)
-- `perf`: Performance improvement
-- `test`: Test-related updates
-- `chore`: Non-code updates (e.g., config)
-- `build`: Build system or dependency changes
-- `ci`: Continuous integration changes
+## 🌐 Live Demo
 
-**Example:**
-```
-feat(portfolio): add responsive navigation bar
+Visit the live portfolio: [GitHub Pages Link](https://is-project-4th-year.github.io/personal-portfolio-nmsby/)
 
-Added a mobile-first responsive nav using Flexbox.
+## 📋 GitHub Workflow
 
-Closes #45
-```
+This project demonstrates:
+- Milestone-based project management
+- Issue tracking and linking
+- Feature branch workflow
+- Pull request reviews
+- Merge conflict resolution
+- Automated deployment
 
----
+## 👨‍💻 Author
 
-## 🔄 Pull Requests & Merge Conflicts
+**Nelson Masbayi Muyodi**
+- Student Number: 138018
+- Email: nelson.muyodi@strathmore.edu
+- University: Strathmore University
 
-- Open a PR for each feature branch.
-- Link the PR to its corresponding issue.
-- Request reviews before merging.
-- Document any merge conflict resolution in the PR or commit message.
+## 📄 License
 
----
-
-## 🚀 Deployment & Documentation
-
-- Keep the `main` branch always deployable.
-- Deploy using GitHub Pages (mandatory) and any suitable platform (optional).
-- Complete the `Assignment.md` file in this repository by addressing all listed requirements. This document will be used for evaluation.
----
-
-## 📥 Submission Checklist
-
-Before submitting your project, ensure the following:
-
-- [ ] Applied the relevant branch protection rules on the main branch
-- [ ] Defined milestones for key features
-- [ ] Created and linked issues to milestones
-- [ ] Organized a GitHub project board (To Do / In Progress / Done)
-- [ ] Used structured commit messages
-- [ ] Created separate feature branches for tasks
-- [ ] Opened and merged PRs with meaningful descriptions
-- [ ] Demonstrated conflict resolution (Simulate atleast one)
-- [ ] Deployed the portfolio online
-- [ ] Completed and updated the `Assignment.md` file which will be marked and graded
-
-
-
+This academic project is licensed under the MIT License — see [LICENSE](LICENSE) file for details

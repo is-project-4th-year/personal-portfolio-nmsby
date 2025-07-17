@@ -1,0 +1,31 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Temporary styling for initial setup */
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+}
+
+#home {
+    padding: 2rem;
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}

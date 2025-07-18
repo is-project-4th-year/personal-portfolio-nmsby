@@ -40,6 +40,7 @@
 <!-- Loading screen -->
 <div class="critical-loading" id="critical-loading">
     <div class="loader"></div>
+    <div class="sr-only">Loading portfolio...</div>
 </div>
 
 <!-- Navigation -->
@@ -798,10 +799,13 @@
 <script>
     // Critical JavaScript for above-fold content
     document.addEventListener('DOMContentLoaded', function() {
-        // Hide loading screen
+        // Hide loading screen immediately if scripts fail to load
         setTimeout(() => {
-            document.getElementById('critical-loading').classList.add('hidden');
-        }, 1000);
+            const loadingElement = document.getElementById('critical-loading');
+            if (loadingElement) {
+                loadingElement.classList.add('hidden');
+            }
+        }, 3000); // Fallback timeout
     });
 
     // Feature detection
@@ -811,13 +815,13 @@
 </script>
 
 // Load non-critical JavaScript asynchronously
-<script async src="js/components/navigation.js"></script>
-<script async src="js/components/skills.js"></script>
-<script async src="js/components/projects.js"></script>
-<script async src="js/components/contact.js"></script>
-<script async src="js/components/mobile-enhancements.js"></script>
-<script async src="js/components/animations.js"></script>
-<script async src="js/components/smooth-scroll.js"></script>
-<script async src="js/main.js"></script>
+<script src="js/components/navigation.js"></script>
+<script src="js/components/skills.js"></script>
+<script src="js/components/projects.js"></script>
+<script src="js/components/contact.js"></script>
+<script src="js/components/mobile-enhancements.js"></script>
+<script src="js/components/animations.js"></script>
+<script src="js/components/smooth-scroll.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

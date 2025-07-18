@@ -144,7 +144,7 @@ class PerformanceOptimizer {
 
     setupServiceWorker() {
         // Register service worker for caching
-        if ('serviceWorker' in navigator) {
+        if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
@@ -154,6 +154,8 @@ class PerformanceOptimizer {
                         console.log('SW registration failed: ', registrationError);
                     });
             });
+        } else {
+            console.log('Service Worker not supported or not running on HTTPS');
         }
     }
 

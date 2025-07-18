@@ -85,6 +85,9 @@ function initializeSectionIndicators() {
     updateActiveDot(); // Initialize
 }
 
+    console.log('Portfolio initialized successfully!');
+}
+
 function initializeResponsiveImages() {
     // Lazy loading for images
     const images = document.querySelectorAll('img[data-src]');

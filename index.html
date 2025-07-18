@@ -3,27 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nelson Masbayi Muyodi - Computer Science Student Portfolio">
+    <meta name="keywords" content="portfolio, web development, computer science, Nelson Muyodi">
+    <meta name="author" content="Nelson Masbayi Muyodi">
+
     <title>Nelson Masbayi Muyodi - Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<header>
-    <nav>
-        <!-- Navigation will be added here -->
-    </nav>
-</header>
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#home" class="logo">Nelson.dev</a>
 
-<main>
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Under Construction...</p>
-    </section>
-</main>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
 
-<footer>
-    <!-- Footer content will be added here -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Nelson Masbayi Muyodi</h1>
+        <h2 class="hero-subtitle">Computer Science Student & Aspiring Developer</h2>
+        <p class="hero-description">
+            Passionate about creating innovative solutions through code.
+            Currently studying Computer Science at Strathmore University,
+            building projects that make a difference.
+        </p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+    </div>
+</section>
+
+<!-- Placeholder sections for future development -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">About Me</h2>
+        <p class="text-center">This section will be developed in the next phase.</p>
+    </div>
+</section>
+
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">Skills</h2>
+        <p class="text-center">This section will be developed in the next phase.</p>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">Projects</h2>
+        <p class="text-center">This section will be developed in the next phase.</p>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">Contact</h2>
+        <p class="text-center">This section will be developed in the next phase.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Nelson Masbayi Muyodi. All rights reserved.</p>
+    </div>
 </footer>
 
+<!-- JavaScript -->
+<script src="js/components/navigation.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

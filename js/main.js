@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializePortfolio() {
+    // Initialize performance optimizer first
+    new PerformanceOptimizer();
+
     // Initialize navigation
     new Navigation();
 
@@ -41,8 +44,78 @@ function initializePortfolio() {
     // Initialize section indicators
     initializeSectionIndicators();
 
+    // Performance monitoring in development mode
+    if (window.location.hostname === 'localhost') {
+        initializePerformanceMonitoring();
+    }
+
     console.log('Portfolio initialized successfully!');
 }
+
+function initializePerformanceMonitoring() {
+    // Create performance monitor
+    const monitor = document.createElement('div');
+    monitor.className = 'perf-monitor';
+    monitor.id = 'perf-monitor';
+    document.body.appendChild(monitor);
+
+    // Update performance metrics
+    setInterval(() => {
+        updatePerformanceMetrics(monitor);
+    }, 1000);
+
+    // Toggle monitor with Ctrl+P
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.key === 'p') {
+            e.preventDefault();
+            monitor.classList.toggle('show');
+        }
+    });
+}
+
+function updatePerformanceMetrics(monitor) {
+    const memory = performance.memory;
+    const timing = performance.timing;
+    const now = performance.now();
+
+    let html = '<strong>Performance Monitor</strong><br>';
+
+    if (memory) {
+        html += `Memory: ${(memory.usedJSHeapSize / 1048576).toFixed(2)}MB / ${(memory.totalJSHeapSize / 1048576).toFixed(2)}MB<br>`;
+    }
+
+    html += `Load Time: ${((timing.loadEventEnd - timing.navigationStart) / 1000).toFixed(2)}s<br>`;
+    html += `DOM Ready: ${((timing.domContentLoadedEventEnd - timing.navigationStart) / 1000).toFixed(2)}s<br>`;
+    html += `Time Since Load: ${(now / 1000).toFixed(2)}s<br>`;
+
+    // FPS counter
+    if (window.fpsCounter) {
+        html += `FPS: ${window.fpsCounter}<br>`;
+    }
+
+    html += '<small>Press Ctrl+P to toggle</small>';
+
+    monitor.innerHTML = html;
+}
+
+// FPS Counter
+(function() {
+    let lastTime = performance.now();
+    let frames = 0;
+
+    function tick() {
+        frames++;
+        const now = performance.now();
+        if (now >= lastTime + 1000) {
+            window.fpsCounter = Math.round((frames * 1000) / (now - lastTime));
+            frames = 0;
+            lastTime = now;
+        }
+        requestAnimationFrame(tick);
+    }
+
+    tick();
+})();
 
 function initializeSectionIndicators() {
     // Create section navigation dots

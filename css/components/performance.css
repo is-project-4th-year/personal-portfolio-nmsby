@@ -1,0 +1,267 @@
+/* Performance Optimization Styles */
+
+/* Image loading states */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img[data-src] {
+    opacity: 0;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+img.error {
+    opacity: 0.5;
+    background: #f8f9fa;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* WebP support */
+.webp-support .project-image {
+    background-image: url('assets/images/projects/project1.webp');
+}
+
+/* Low-end device optimizations */
+.reduce-animations * {
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+}
+
+.reduce-animations .parallax {
+    transform: none !important;
+}
+
+.reduce-animations .custom-cursor {
+    display: none !important;
+}
+
+/* Critical CSS inlining placeholder */
+.critical-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.critical-loading.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.critical-loading .loader {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Layout shift prevention */
+.aspect-ratio-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.aspect-ratio-16-9 {
+    padding-bottom: 56.25%;
+}
+
+.aspect-ratio-4-3 {
+    padding-bottom: 75%;
+}
+
+.aspect-ratio-1-1 {
+    padding-bottom: 100%;
+}
+
+.aspect-ratio-container img,
+.aspect-ratio-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Font loading optimization */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Poppins Regular'), local('Poppins-Regular'),
+    url('https://fonts.gstatic.com/s/poppins/v15/pxiEyp8kv8JHgFVrJJfecg.woff2') format('woff2');
+}
+
+/* Resource hints */
+.preload-hint {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* Intersection observer fallback */
+.no-intersection-observer img[data-src] {
+    opacity: 1;
+}
+
+.no-intersection-observer img[data-src]:not([src]) {
+    background: #f0f0f0;
+}
+
+/* Performance monitoring styles */
+.perf-monitor {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    z-index: 10000;
+    display: none;
+}
+
+.perf-monitor.show {
+    display: block;
+}
+
+/* Critical path optimization */
+.above-fold {
+    will-change: auto;
+}
+
+.below-fold {
+    will-change: transform, opacity;
+}
+
+/* GPU acceleration for smooth animations */
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Optimize for 60fps */
+.smooth-animation {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Battery and data saving mode */
+@media (prefers-reduced-data) {
+    .high-quality-image {
+        display: none;
+    }
+
+    .low-quality-image {
+        display: block;
+    }
+
+    .video-background {
+        display: none;
+    }
+}
+
+/* Memory usage optimization */
+.offscreen {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+}
+
+/* Layout containment */
+.contain-layout {
+    contain: layout;
+}
+
+.contain-paint {
+    contain: paint;
+}
+
+.contain-size {
+    contain: size;
+}
+
+.contain-style {
+    contain: style;
+}
+
+/* Responsive image optimization */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Lazy loading skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+.skeleton-text {
+    height: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 4px;
+}
+
+.skeleton-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.skeleton-card {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+}
+
+/* Connection-aware loading */
+.slow-connection .heavy-animation {
+    display: none;
+}
+
+.slow-connection .light-animation {
+    display: block;
+}
+
+/* Reduced motion support for performance */
+@media (prefers-reduced-motion: reduce) {
+    .reduce-animations {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .parallax {
+        transform: none !important;
+    }
+}

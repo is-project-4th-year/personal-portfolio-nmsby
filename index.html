@@ -7,7 +7,21 @@
     <meta name="keywords" content="portfolio, web development, computer science, Nelson Muyodi">
     <meta name="author" content="Nelson Masbayi Muyodi">
 
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#007bff">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <title>Nelson Masbayi Muyodi - Portfolio</title>
+
+    <!-- Critical CSS (inline in production) -->
+    <style>
+        /* Critical above-fold styles */
+        body { margin: 0; font-family: system-ui, sans-serif; }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; }
+        .hero { min-height: 100vh; display: flex; align-items: center; }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
@@ -16,9 +30,18 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
+<!-- Loading screen -->
+<div class="critical-loading" id="critical-loading">
+    <div class="loader"></div>
+</div>
+
 <!-- Navigation -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -67,7 +90,7 @@
 
         <div class="about-content">
             <div class="about-image">
-                <img src="assets/images/profile-photo.jpg" alt="Nelson Masbayi Muyodi" class="profile-photo">
+                <img data-src="assets/images/profile-photo.jpg" alt="Nelson Masbayi Muyodi" class="profile-photo">
             </div>
 
             <div class="about-text">
@@ -298,7 +321,7 @@
                 <!-- Project 1: Portfolio Website -->
                 <div class="project-card hover-lift" data-category="web" data-animation="scaleIn">
                     <div class="project-image">
-                        <img src="assets/images/projects/project1.jpg" alt="Portfolio Website">
+                        <img data-src="assets/images/projects/project1.jpg" alt="Portfolio Website" loading="lazy">
                         <div class="project-overlay">
                             <a href="#" class="overlay-btn">
                                 <i class="fas fa-eye"></i>
@@ -339,7 +362,7 @@
                 <!-- Project 2: E-commerce Platform -->
                 <div class="project-card hover-lift" data-category="web" data-animation="scaleIn">
                     <div class="project-image">
-                        <img src="assets/images/projects/project2.jpg" alt="E-commerce Platform">
+                        <img data-src="assets/images/projects/project2.jpg" alt="E-commerce Platform" loading="lazy">
                         <div class="project-overlay">
                             <a href="#" class="overlay-btn">
                                 <i class="fas fa-eye"></i>
@@ -380,7 +403,7 @@
                 <!-- Project 3: Task Management App -->
                 <div class="project-card hover-lift" data-category="mobile" data-animation="scaleIn">
                     <div class="project-image">
-                        <img src="assets/images/projects/project3.jpg" alt="Task Management App">
+                        <img data-src="assets/images/projects/project3.jpg" alt="Task Management App" loading="lazy">
                         <div class="project-overlay">
                             <a href="#" class="overlay-btn">
                                 <i class="fas fa-eye"></i>
@@ -421,7 +444,7 @@
                 <!-- Project 4: Student Management System -->
                 <div class="project-card hover-lift" data-category="desktop" data-animation="scaleIn">
                     <div class="project-image">
-                        <img src="assets/images/projects/project4.jpg" alt="Student Management System">
+                        <img data-src="assets/images/projects/project4.jpg" alt="Student Management System" loading="lazy">
                         <div class="project-overlay">
                             <a href="#" class="overlay-btn">
                                 <i class="fas fa-eye"></i>
@@ -462,7 +485,7 @@
                 <!-- Project 5: Weather Prediction AI -->
                 <div class="project-card hover-lift" data-category="ai" data-animation="scaleIn">
                     <div class="project-image">
-                        <img src="assets/images/projects/project5.jpg" alt="Weather Prediction AI">
+                        <img data-src="assets/images/projects/project5.jpg" alt="Weather Prediction AI" loading="lazy">
                         <div class="project-overlay">
                             <a href="#" class="overlay-btn">
                                 <i class="fas fa-eye"></i>
@@ -503,7 +526,7 @@
                 <!-- Project 6: Library Management System -->
                 <div class="project-card hover-lift" data-category="web" data-animation="scaleIn">
                     <div class="project-image">
-                        <img src="assets/images/projects/project6.jpg" alt="Library Management System">
+                        <img data-src="assets/images/projects/project6.jpg" alt="Library Management System" loading="lazy">
                         <div class="project-overlay">
                             <a href="#" class="overlay-btn">
                                 <i class="fas fa-eye"></i>
@@ -772,13 +795,29 @@
 </footer>
 
 <!-- JavaScript -->
-<script src="js/components/navigation.js"></script>
-<script src="js/components/skills.js"></script>
-<script src="js/components/projects.js"></script>
-<script src="js/components/contact.js"></script>
-<script src="js/components/mobile-enhancements.js"></script>
-<script src="js/components/animations.js"></script>
-<script src="js/components/smooth-scroll.js"></script>
-<script src="js/main.js"></script>
+<script>
+    // Critical JavaScript for above-fold content
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hide loading screen
+        setTimeout(() => {
+            document.getElementById('critical-loading').classList.add('hidden');
+        }, 1000);
+    });
+
+    // Feature detection
+    if (!('IntersectionObserver' in window)) {
+        document.documentElement.classList.add('no-intersection-observer');
+    }
+</script>
+
+// Load non-critical JavaScript asynchronously
+<script async src="js/components/navigation.js"></script>
+<script async src="js/components/skills.js"></script>
+<script async src="js/components/projects.js"></script>
+<script async src="js/components/contact.js"></script>
+<script async src="js/components/mobile-enhancements.js"></script>
+<script async src="js/components/animations.js"></script>
+<script async src="js/components/smooth-scroll.js"></script>
+<script async src="js/main.js"></script>
 </body>
 </html>

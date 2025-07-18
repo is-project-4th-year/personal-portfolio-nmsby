@@ -4,6 +4,7 @@
 /* Import Components */
 @import url('components/navigation.css');
 @import url('components/hero.css');
+@import url('components/about.css');
 @import url('components/footer.css');
 
 /* Reset and Base Styles */

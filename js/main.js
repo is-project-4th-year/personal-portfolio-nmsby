@@ -10,6 +10,9 @@ function initializePortfolio() {
     // Initialize navigation
     new Navigation();
 
+    // Initialize skills
+    new Skills();
+
     // Initialize smooth scrolling
     initializeSmoothScrolling();
 

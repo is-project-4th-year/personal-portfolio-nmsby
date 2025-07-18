@@ -16,6 +16,9 @@ function initializePortfolio() {
     // Initialize projects
     new Projects();
 
+    // Initialize contact form
+    new ContactForm();
+
     // Initialize smooth scrolling
     initializeSmoothScrolling();
 

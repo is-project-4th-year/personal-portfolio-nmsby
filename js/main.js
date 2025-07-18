@@ -19,17 +19,7 @@ function initializePortfolio() {
     // Initialize contact form
     new ContactForm();
 
-    // Initialize mobile enhancements
-    new MobileEnhancements();
-
-    // Initialize animations
-    new PortfolioAnimations();
-
     // Initialize smooth scrolling
-    const smoothScroll = new SmoothScroll();
-    smoothScroll.handleHashOnLoad();
-
-    // Initialize smooth scrolling (legacy)
     initializeSmoothScrolling();
 
     // Initialize loading animations
@@ -37,53 +27,6 @@ function initializePortfolio() {
 
     // Initialize responsive image handling
     initializeResponsiveImages();
-
-    // Initialize section indicators
-    initializeSectionIndicators();
-
-    console.log('Portfolio initialized successfully!');
-}
-
-function initializeSectionIndicators() {
-    // Create section navigation dots
-    const sections = document.querySelectorAll('section[id]');
-    if (sections.length === 0) return;
-
-    const indicator = document.createElement('div');
-    indicator.className = 'section-indicator';
-
-    sections.forEach((section, index) => {
-        const dot = document.createElement('div');
-        dot.className = 'section-dot';
-        dot.setAttribute('data-tooltip', section.dataset.title || section.id.charAt(0).toUpperCase() + section.id.slice(1));
-        dot.addEventListener('click', () => {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-
-        indicator.appendChild(dot);
-    });
-
-    document.body.appendChild(indicator);
-
-    // Update active dot on scroll
-    const updateActiveDot = () => {
-        const scrollPosition = window.pageYOffset + 100;
-        const dots = indicator.querySelectorAll('.section-dot');
-
-        sections.forEach((section, index) => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index]?.classList.add('active');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', updateActiveDot);
-    updateActiveDot(); // Initialize
-}
 
     console.log('Portfolio initialized successfully!');
 }

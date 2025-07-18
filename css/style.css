@@ -1,0 +1,158 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Import Components */
+@import url('components/navigation.css');
+@import url('components/hero.css');
+@import url('components/about.css');
+@import url('components/skills.css');
+@import url('components/projects.css');
+@import url('components/contact.css');
+@import url('components/footer.css');
+@import url('components/mobile-nav.css');
+
+/* Import Responsive Styles */
+@import url('responsive.css');
+
+/* CSS Custom Properties for Responsive Design */
+:root {
+    /* Viewport-based units */
+    --vh: 1vh;
+    --vw: 1vw;
+
+    /* Breakpoints */
+    --mobile: 576px;
+    --tablet: 768px;
+    --desktop: 992px;
+    --large: 1200px;
+    --extra-large: 1400px;
+
+    /* Spacing Scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* Font Sizes */
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-base: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 1.875rem;
+    --font-4xl: 2.25rem;
+    --font-5xl: 3rem;
+
+    /* Container Widths */
+    --container-sm: 540px;
+    --container-md: 720px;
+    --container-lg: 960px;
+    --container-xl: 1140px;
+    --container-2xl: 1320px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.loading.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Use viewport height fix */
+.hero {
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Responsive Utilities */
+@media (min-width: 576px) {
+    .container { max-width: var(--container-sm); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: var(--container-md);
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .container { max-width: var(--container-lg); }
+}
+
+@media (min-width: 1200px) {
+    .container { max-width: var(--container-xl); }
+}
+
+@media (min-width: 1400px) {
+    .container { max-width: var(--container-2xl); }
+}

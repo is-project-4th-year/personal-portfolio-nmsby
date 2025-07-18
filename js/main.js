@@ -13,6 +13,9 @@ function initializePortfolio() {
     // Initialize skills
     new Skills();
 
+    // Initialize projects
+    new Projects();
+
     // Initialize smooth scrolling
     initializeSmoothScrolling();
 

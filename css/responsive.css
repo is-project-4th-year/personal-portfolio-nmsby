@@ -1,0 +1,463 @@
+/* Advanced Responsive Design Enhancements */
+
+/* Extra Large Devices (1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Devices (992px and up) */
+@media (min-width: 992px) and (max-width: 1399px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .about-content {
+        gap: 3rem;
+    }
+
+    .skills-categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Medium Devices (768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+        padding: 0 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .skills-categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Devices (576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: 540px;
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .skills-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}
+
+/* Extra Small Devices (up to 575px) */
+@media (max-width: 575px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero {
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .stat-item {
+        padding: 1rem;
+    }
+
+    .skill-category {
+        padding: 1rem;
+    }
+
+    .project-card {
+        margin: 0 0.5rem;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 1rem;
+    }
+
+    .contact-item {
+        padding: 0.8rem;
+    }
+
+    .contact-form {
+        padding: 1rem;
+    }
+
+    .footer {
+        padding: 1.5rem 0 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Landscape Phone Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 1rem 0;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-buttons {
+        gap: 0.5rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+
+    .navbar,
+    .hero-buttons,
+    .contact-form,
+    .footer-social,
+    .social-links {
+        display: none !important;
+    }
+
+    .section {
+        page-break-inside: avoid;
+        padding: 1rem 0;
+    }
+
+    .project-card {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        margin-bottom: 1rem;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-photo,
+    .project-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .loading {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .skill-progress {
+        transition: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+
+    .project-card {
+        border: 2px solid #333;
+    }
+
+    .form-input,
+    .form-textarea {
+        border: 2px solid #333;
+    }
+
+    .navbar {
+        border-bottom: 2px solid #333;
+    }
+}
+
+/* Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --card-bg: #1e1e1e;
+        --border-color: #333;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    .navbar {
+        background: rgba(18, 18, 18, 0.95);
+    }
+
+    .about {
+        background: #1a1a1a;
+    }
+
+    .skills {
+        background: #121212;
+    }
+
+    .projects {
+        background: #1a1a1a;
+    }
+
+    .project-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+    }
+
+    .skill-category {
+        background: var(--card-bg);
+    }
+
+    .stat-item {
+        background: var(--card-bg);
+    }
+}
+
+/* Container Query Support (Future Enhancement) */
+@supports (container-type: inline-size) {
+    .project-card {
+        container-type: inline-size;
+    }
+
+    @container (max-width: 300px) {
+        .project-content {
+            padding: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+/* Flexible Grid System */
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-1 { grid-template-columns: 1fr; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 768px) {
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility Classes for Responsive Design */
+.hidden-mobile {
+    display: block;
+}
+
+.hidden-desktop {
+    display: none;
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.aspect-ratio-16-9 {
+    aspect-ratio: 16/9;
+}
+
+.aspect-ratio-4-3 {
+    aspect-ratio: 4/3;
+}
+
+.aspect-ratio-1-1 {
+    aspect-ratio: 1/1;
+}
+
+@media (max-width: 768px) {
+    .hidden-mobile {
+        display: none;
+    }
+
+    .hidden-desktop {
+        display: block;
+    }
+
+    .mobile-full-width {
+        width: 100%;
+    }
+
+    .mobile-text-center {
+        text-align: center;
+    }
+}
+
+/* Scroll Behavior Enhancements */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
+}
+
+/* Focus Visible Support */
+@supports selector(:focus-visible) {
+    .btn:focus {
+        outline: none;
+    }
+
+    .btn:focus-visible {
+        outline: 2px solid #007bff;
+        outline-offset: 2px;
+    }
+}

@@ -25,7 +25,28 @@ function initializePortfolio() {
     // Initialize loading animations
     initializeLoadingAnimations();
 
+    // Initialize responsive image handling
+    initializeResponsiveImages();
+
     console.log('Portfolio initialized successfully!');
+}
+
+function initializeResponsiveImages() {
+    // Lazy loading for images
+    const images = document.querySelectorAll('img[data-src]');
+
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
 }
 
 function initializeSmoothScrolling() {
